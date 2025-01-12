@@ -8,7 +8,7 @@ const app = express();
 app.use(cors()); // for client-server side connection
 app.use(express.json()); // for passing data in json format 
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.post("/signup", (req,res)=>{
     UserModel.create(req.body)
