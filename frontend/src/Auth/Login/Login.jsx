@@ -5,16 +5,18 @@ import axios from "axios";
 
 const Login =()=>{
 
-  const URL = "https://mern-foodiefront.onrender.com"
+  // const URL = "https://mern-foodiefront.onrender.com"
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
+
   const submit =(e)=>{
     e.preventDefault();
-    axios.post(`${URL}/login`,{email, password})
+    axios.post("https://mern-foodie-front-server.vercel.app/login",{email, password})
         .then(result => {
             if(result.data == "Success"){
                 navigate("/home")

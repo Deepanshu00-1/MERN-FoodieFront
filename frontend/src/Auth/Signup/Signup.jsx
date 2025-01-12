@@ -8,13 +8,13 @@ const Signup = () => {
   const[email, setEmail] = useState();
   const[password, setPassword] = useState();
 
-  const URL = "https://mern-foodiefront.onrender.com";
+  // const URL = "https://mern-foodiefront.onrender.com";
 
   const navigate = useNavigate();
 
   const submit = (e)=>{
     e.preventDefault();
-    axios.post(`${URL}/signup`, {username, email, password})
+    axios.post("https://mern-foodie-front-server.vercel.app/signup", {username, email, password})
     .then(result => {
       console.log(result)
       navigate("/login")
