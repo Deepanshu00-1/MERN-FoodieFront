@@ -12,7 +12,7 @@ const Signup = () => {
 
   const submit = (e)=>{
     e.preventDefault();
-    axios.post("http://localhost:3000/signup", {username, email, password})
+    axios.post("https://mern-foodiefront-backend.onrender.com/signup", {username, email, password})
     .then(result => {
       console.log(result)
       navigate("/login")
