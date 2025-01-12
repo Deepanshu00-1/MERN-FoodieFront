@@ -12,9 +12,11 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
+
   const submit = (e)=>{
     e.preventDefault();
-    axios.post("https://mern-foodie-front-server.vercel.app/signup", {username, email, password})
+    axios.post("https://mern-foodie-front-backend.vercel.app/signup", {username, email, password})
     .then(result => {
       console.log(result)
       navigate("/login")
