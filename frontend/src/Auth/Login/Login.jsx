@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Login =()=>{
 
-  // const URL = "https://mern-foodiefront-backend.onrender.com"
+  const URL = "https://mern-foodiefront.onrender.com"
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -14,7 +14,7 @@ const Login =()=>{
 
   const submit =(e)=>{
     e.preventDefault();
-    axios.post("https://mern-foodiefront-backend.onrender.com/login",{email, password})
+    axios.post(`${URL}/login`,{email, password})
         .then(result => {
             if(result.data == "Success"){
                 navigate("/home")

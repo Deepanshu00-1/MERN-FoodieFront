@@ -8,11 +8,13 @@ const Signup = () => {
   const[email, setEmail] = useState();
   const[password, setPassword] = useState();
 
+  const URL = "https://mern-foodiefront.onrender.com";
+
   const navigate = useNavigate();
 
   const submit = (e)=>{
     e.preventDefault();
-    axios.post("https://mern-foodiefront-backend.onrender.com/signup", {username, email, password})
+    axios.post(`${URL}/signup`, {username, email, password})
     .then(result => {
       console.log(result)
       navigate("/login")
