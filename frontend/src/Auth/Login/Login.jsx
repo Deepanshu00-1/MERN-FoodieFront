@@ -16,7 +16,7 @@ const Login =()=>{
 
   const submit =(e)=>{
     e.preventDefault();
-    axios.post("https://mern-foodie-front-server.vercel.app/login",{email, password})
+    axios.post("https://mern-foodie-front-backend.vercel.app/login",{email, password})
         .then(result => {
             if(result.data == "Success"){
                 navigate("/home")
