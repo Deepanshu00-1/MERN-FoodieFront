@@ -5,7 +5,13 @@ import UserModel from "./models/UserModel.js";
 
 const app = express();
 
-app.use(cors()); // for client-server side connection
+app.use(cors(
+    {
+        origin: [""],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+)); // for client-server side connection
 app.use(express.json()); // for passing data in json format 
 
 const port = process.env.PORT || 3000;
