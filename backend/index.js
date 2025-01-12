@@ -14,7 +14,7 @@ app.use(cors(
 )); // for client-server side connection
 app.use(express.json()); // for passing data in json format 
 
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
 app.post("/signup", (req,res)=>{
     UserModel.create(req.body)
@@ -41,7 +41,7 @@ app.post("/login", (req,res)=>{
 
 connectDB();
 
-app.listen(port, (req,res)=>{
+app.listen(3000, (req,res)=>{
 
     console.log("Server is running")
 });
