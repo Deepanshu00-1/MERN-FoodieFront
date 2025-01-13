@@ -16,13 +16,13 @@ app.use(express.json()); // for passing data in json format
 
 // const port = process.env.PORT || 3000;
 
-app.post("/signup", (req,res)=>{
+app.post("signup", (req,res)=>{
     UserModel.create(req.body)
     .then(users => res.json(users))
     .catch(error => res.json(error))
 });
 
-app.post("/login", (req,res)=>{
+app.post("login", (req,res)=>{
     const {email, password} = req.body;
     UserModel.findOne({email: email})
     .then(user => {
