@@ -7,8 +7,8 @@ const app = express();
 
 app.use(cors(
     {
-        origin: ["https://mern-foodie-front-frontend.vercel.app"],
-        methods: ["POST", "GET"],
+        origin: [""],
+        methods: ["POST"],
         credentials: true
     }
 )); // for client-server side connection
@@ -41,7 +41,7 @@ app.post("/login", (req,res)=>{
 
 connectDB();
 
-app.listen(3000, (req,res)=>{
+app.listen(8000, (req,res)=>{
 
     console.log("Server is running")
 });
